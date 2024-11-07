@@ -12,8 +12,9 @@ public class Consumer {
 
     public static final String TOPIC_NAME = "orders";
 
-    @KafkaListener(topics = {TOPIC_NAME})
+    @KafkaListener(topics = TOPIC_NAME)
     public void listen(@Payload Order order) {
         log.info("Consumed order: {} with price {}", order.getName(), order.getPrice());
     }
+
 }
